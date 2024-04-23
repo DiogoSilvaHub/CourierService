@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "couriertocourierappservice";
+
+package couriertocourierappservice;
+
+service CourierToCourierAppService {
+
+  rpc connect(Availability) returns (Address);
+  rpc disconnect(Void) returns (Void);
+
+}
+
+message Availability{
+  string availability = 1;
+}
+
+message Address {
+  string pickUpAddress = 1;
+  string deliveryAddress = 2;
+}
+
+message Void {
+}
